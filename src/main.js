@@ -9,7 +9,7 @@ import router from './router/index.js'
 import VueResource from 'vue-resource'
 
 import ElementUI from 'element-ui'
-import {Header,Swipe, SwipeItem} from 'mint-ui'
+import {Header,Swipe, SwipeItem,Button} from 'mint-ui'
 import './lib/css/mui.css'
 import 'mint-ui/lib/style.css'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -20,6 +20,17 @@ import './lib/css/icons-extra.css'
 Vue.use(VueRouter);
 Vue.use(ElementUI);
 Vue.use(VueResource);
+Vue.use(Button.name,Button)
+
+import moment from 'moment'
+//定义1全局过滤器
+Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
+ return moment(dataStr).format(pattern)
+})
+
+// 设置请求的根路径
+Vue.http.options.root = 'http://vue.studyit.io';
+
 
 console.log('ok');
 

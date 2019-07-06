@@ -11,9 +11,10 @@
 
         <!-- 九宫格到 六宫格 -->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <img src="../../images/menu1.png" alt="">
-		                    <div class="mui-media-body">新闻资讯</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                        <router-link to="/home/newslist">
+		                    <img src="../../images/menu1.png" alt=""> 
+		                    <div class="mui-media-body">新闻资讯</div></router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <img src="../../images/menu2.png" alt="">
 		                    <div class="mui-media-body">图片分享</div></a></li>
@@ -48,7 +49,7 @@ export default {
     methods:{
         getLunbotu(){ //获取轮播图数据的方法
         Toast('加载轮播图失败');
-            this.$http.get('https://gitee.com/gudujohn/frontend-study/tree/master/webpack-cms-pro').then(result =>{
+            this.$http.get('api/getlunbo').then(result =>{
                 if(result.body.status === 0){
                     //成功了
                     this.lunbotuList = result.body.message;

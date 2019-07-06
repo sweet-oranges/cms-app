@@ -62,6 +62,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px; */
   padding-top:40px;
+  padding-bottom: 50px;
   overflow-x: hidden
 }
 
