@@ -30,6 +30,8 @@ Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
 
 // 设置请求的根路径
 Vue.http.options.root = 'http://vue.studyit.io';
+//全局设置 post 时候表单数据的组织格式
+Vue.http.options.emulateJSON = true;
 
 
 console.log('ok');
