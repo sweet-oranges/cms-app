@@ -54,6 +54,9 @@ export default {
 </script>
 
 <style scoped>
+.mint-header{
+  z-index: 99;
+}
 #app {
   /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

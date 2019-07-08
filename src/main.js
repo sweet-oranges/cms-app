@@ -7,16 +7,21 @@ import App from './App'
 import VueRouter from 'vue-router'
 import router from './router/index.js'
 import VueResource from 'vue-resource'
+//安装图片预览插件
+import VuePreview from 'vue-preview'
 
 import ElementUI from 'element-ui'
-import {Header,Swipe, SwipeItem,Button} from 'mint-ui'
+import {Header,Swipe, SwipeItem,Button,Lazyload} from 'mint-ui'
 import './lib/css/mui.css'
 import 'mint-ui/lib/style.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import './lib/css/icons-extra.css'
 // import './assets/css/main.css'
 //按需导入mint-UI的组件
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
 
+Vue.use(VuePreview);
 Vue.use(VueRouter);
 Vue.use(ElementUI);
 Vue.use(VueResource);
@@ -39,6 +44,7 @@ console.log('ok');
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name,Swipe);
 Vue.component(SwipeItem.name,SwipeItem);
+Vue.use(Lazyload);
 //设置全局表单提交格式
 Vue.http.options.emulateJSON = true;
 
